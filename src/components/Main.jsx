@@ -1,14 +1,12 @@
 import React from 'react'
+import Hero from './Hero'
+import Specials from './Specials'
 
 const Main = () => {
   return (
     <main>
-        <section className='hero'>
-                Hero
-        </section>
-          <section className='specials'>
-                Specials
-        </section>
+        <Hero />
+        <Specials />
           <section className='testimonials'>
                 Testimonials
         </section>
