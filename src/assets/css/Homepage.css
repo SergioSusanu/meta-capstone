@@ -1,0 +1,66 @@
+
+/*site width desktop wrapper*/
+.wrapper{
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Row spacing*/
+.row{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/*Header*/
+header .wrapper{
+  display: flex;
+  justify-content: space-between;
+ 
+}
+
+nav ul{
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+} 
+
+nav ul li a{
+  text-decoration: none;
+}
+
+/*Hero*/
+.homepage .hero{
+  background-color: var(--primary-green);
+
+}
+
+.homepage .hero h1{
+  color: var(--primary-yellow)
+}
+
+.homepage .hero h1 span, .homepage.hero p{
+  color:var(--light-gray)
+}
+
+.homepage .hero .wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.homepage .hero .right{
+  text-align: right;
+  padding-top: 30px;
+}
+
+/*Specials Section*/
+.specials .specials-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.specials .specials-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+}

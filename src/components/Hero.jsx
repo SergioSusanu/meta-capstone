@@ -6,7 +6,7 @@ const Hero = () => {
     <section className='hero'>
         <div className="wrapper">
             <div className="left">
-                <h1>Little Lemon<br/>Chicago</h1>
+                <h1>Little Lemon<br/><span>Chicago</span></h1>
                 <p>We are a family owned Mediterranean restaurant focused on traditional recipes served with a modern twist.</p>
                 <button>Reserve a table</button>
             </div>

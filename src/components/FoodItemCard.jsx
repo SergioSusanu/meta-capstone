@@ -1,4 +1,5 @@
 import React from 'react'
+import MopedIcon from './../assets/images/moped.svg'
 
 const FoodItemCard = ({data}) => {
   return (
@@ -10,7 +11,9 @@ const FoodItemCard = ({data}) => {
                 <span>${data.price}</span>
             </div>
             <p>{data.description}</p>
-            <button>Order a delivery</button>
+            <button>Order a delivery &nbsp;
+              <img src={MopedIcon} />
+            </button>
        </div>
     </article>
   )
