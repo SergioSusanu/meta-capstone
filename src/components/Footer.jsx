@@ -4,7 +4,8 @@ const Footer = () => {
   return (
     <footer>
         <div className='wrapper'>
-            <div className='container'>
+          <div className="row">
+            <div className="container">
                 <div>
                     Logo
                 </div>
@@ -17,6 +18,7 @@ const Footer = () => {
                  <div>
                     s3
                 </div>
+            </div>
             </div>
         </div>
     </footer>

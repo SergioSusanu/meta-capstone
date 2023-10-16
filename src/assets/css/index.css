@@ -30,6 +30,10 @@ code {
   color:var(--primary-green)
 }
 
+.primary-yellow{
+  color:var(--primary-yellow)
+}
+
 section{
   padding-top: 1em;
   padding-bottom: 1em;
