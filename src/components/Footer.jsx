@@ -5,7 +5,7 @@ const Footer = () => {
     <footer>
         <div className='wrapper'>
           <div className="row">
-            <div className="container">
+         
                 <div>
                     Logo
                 </div>
@@ -19,7 +19,7 @@ const Footer = () => {
                     s3
                 </div>
             </div>
-            </div>
+           
         </div>
     </footer>
   )

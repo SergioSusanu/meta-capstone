@@ -7,13 +7,14 @@ const FoodItemCard = ({data}) => {
        <img src={data.img} alt={data.description} />
        <div className='food-item-info'>
             <div className='food-item-meta'>
-                <h3>{data.name}</h3>
-                <span>${data.price}</span>
+                <h3  className='primary-green'>{data.name}</h3>
+                <span  className='secondary-peach'>${data.price}</span>
             </div>
-            <p>{data.description}</p>
-            <button>Order a delivery &nbsp;
+            <div><p  className='primary-green'>{data.description}</p></div>
+           <div> <a href=""  className='primary-green lead-text'>Order a delivery &nbsp;
               <img src={MopedIcon} />
-            </button>
+            </a>
+            </div>
        </div>
     </article>
   )

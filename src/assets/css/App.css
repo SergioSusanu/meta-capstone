@@ -1,7 +1,7 @@
 
 /*site width desktop wrapper*/
 .wrapper{
-  max-width: 986px;
+  max-width: var(--desktop-width);
   margin-left: auto;
   margin-right: auto;
 }
@@ -14,20 +14,29 @@
 }
 
 /*Header*/
+header{
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
 header .wrapper{
   display: flex;
   justify-content: space-between;
+  width: var(--desktop-width);
  
 }
 
 nav ul{
   list-style-type: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
 } 
 
 nav ul li a{
   text-decoration: none;
+  color: var(--primary-green);
+  text-transform: uppercase;
 }
 
 /*Footer*/
@@ -36,7 +45,7 @@ footer {
   color: var(--light-gray);
 }
 
-footer .container{
+footer .row{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }

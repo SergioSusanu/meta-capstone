@@ -7,11 +7,15 @@ const Hero = () => {
         <div className="wrapper">
             <div className="left">
                 <h1>Little Lemon<br/><span>Chicago</span></h1>
-                <p>We are a family owned Mediterranean restaurant focused on traditional recipes served with a modern twist.</p>
-                <button>Reserve a table</button>
+                <p className='light-gray'>We are a family owned Mediterranean<br/> 
+                restaurant focused on traditional<br/> recipes served with a modern twist.</p>
+                <p>
+                   <button className='primary-button'>Reserve a table</button>
+                </p>
             </div>
             <div className="right">
-                <img src={RestFoodImg} alt="Waiter with fresh made Bruschetta's" />
+                <img src={RestFoodImg} height="380px" width="auto"
+                 alt="Waiter with fresh made Bruschetta's" />
             </div>
         </div>
     </section>

@@ -6,6 +6,11 @@
   --light-gray: #EDEFEE;
   --dark-gray: #333333;
   --border-radius:16px;
+  --desktop-width:986px;
+}
+
+*{
+  box-sizing: border-box;
 }
 
 body {
@@ -34,7 +39,28 @@ code {
   color:var(--primary-yellow)
 }
 
+.light-gray{
+  color:var(--light-gray)
+}
+
+.secondary-peach{
+  color: var(--secondary-peach)
+}
+
 section{
   padding-top: 1em;
   padding-bottom: 1em;
+}
+
+a{
+  text-decoration: none;
+}
+
+.primary-button{
+  background-color: var(--primary-yellow);
+  color: var(--primary-green);
+  border:none;
+  font-weight:bold;
+  border-radius: var(--border-radius);
+  padding:  15px;
 }
