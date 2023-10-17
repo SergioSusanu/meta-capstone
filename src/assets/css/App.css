@@ -4,6 +4,8 @@
   max-width: var(--desktop-width);
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 /*Row spacing*/
@@ -45,7 +47,45 @@ footer {
   color: var(--light-gray);
 }
 
+footer .wrapper{
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+
 footer .row{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width:769px) and (max-width:1023px) {
+.footer .row{
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+@media (max-width: 768px) {
+footer .row{
+    grid-template-columns: 1fr;
+}
+}
+
+footer p.lead-text{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0px;
+}
+
+footer ul{
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+footer ul li a{
+  color: var(--light-gray);
+  line-height: 2em;
+}
+
+footer .social-info{
+  display: flex;
+  gap: 0.5em;
 }

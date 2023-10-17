@@ -120,6 +120,18 @@ section.testimonials .testimonials-header h2{
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+@media (min-width:769px) and (max-width:1023px) {
+.testimonials-cards{
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+@media (max-width: 768px) {
+.testimonials-cards{
+    grid-template-columns: 1fr;
+}
+}
+
 .testimonial-card{
   display: flex;
   flex-direction: column;
@@ -147,6 +159,12 @@ section.testimonials .testimonials-header h2{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap:2em;
+}
+
+@media (max-width: 768px) {
+.homepage section.about .row{
+    grid-template-columns: 1fr;
+}
 }
 
 
