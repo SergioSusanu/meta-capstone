@@ -5,10 +5,13 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
 import InitialDataProvider from './data/InitialDataProvider';
+import CssBaseline from "@mui/material/CssBaseline";
+
 
 function App() {
   return (
     <InitialDataProvider>
+      <CssBaseline enableColorScheme />
       <div className="homepage">
         <Header />
         <Main />
