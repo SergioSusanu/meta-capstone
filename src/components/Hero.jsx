@@ -1,5 +1,6 @@
 import React from 'react'
 import RestFoodImg from './../assets/images/restauranfood.png'
+import { Button } from '@mui/material'
 
 const Hero = () => {
   return (
@@ -11,6 +12,7 @@ const Hero = () => {
                 restaurant focused on traditional<br/> recipes served with a modern twist.</p>
                 <p>
                    <button className='primary-button'>Reserve a table</button>
+                   <Button variant='contained'>Hello</Button>
                 </p>
             </div>
             <div className="right">
