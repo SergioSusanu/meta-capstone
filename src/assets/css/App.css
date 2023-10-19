@@ -53,8 +53,8 @@ footer .wrapper{
 }
 
 footer .row{
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 @media (min-width:769px) and (max-width:1023px) {
@@ -89,3 +89,4 @@ footer .social-info{
   display: flex;
   gap: 0.5em;
 }
+
