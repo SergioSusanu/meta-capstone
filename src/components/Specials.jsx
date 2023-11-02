@@ -2,13 +2,12 @@ import React, {useContext} from 'react'
 import FoodItemCard from './FoodItemCard'
 import SpecialsData from '../data/SpecialsData'
 import CommonButton from './common/CommonButton';
+import FoodItemCardMui from './FoodItemCardMui';
 
 
 const Specials = () => {
 
    const FoodItems = SpecialsData();
-
-
 
   return (
       <section className='specials'>
@@ -20,6 +19,11 @@ const Specials = () => {
                 <div className="row specials-cards">
                     {FoodItems.map((item) => {
                         return <FoodItemCard key={item.id} data={item} />
+                    })}
+                </div>
+                <div className="row specials-cards">
+                    {FoodItems.map((item) => {
+                        return <FoodItemCardMui key={item.id} data={item} />
                     })}
                 </div>
             </div>

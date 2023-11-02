@@ -1,4 +1,4 @@
-:root{
+ :root{
   --primary-green: #495E57;
   --primary-yellow:#F4CE14;
   --secondary-peach: #EE9972;
@@ -19,13 +19,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--light-gray);
-  font-size: 16px;
+  /* font-size: 16px; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 .lead-text{
   font-weight: bold;
@@ -54,13 +50,4 @@ section{
 
 a{
   text-decoration: none;
-}
-
-.primary-button{
-  background-color: var(--primary-yellow);
-  color: var(--primary-green);
-  border:none;
-  font-weight:bold;
-  border-radius: var(--border-radius);
-  padding:  15px;
 }
