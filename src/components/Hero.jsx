@@ -1,6 +1,7 @@
 import React from 'react'
 import RestFoodImg from './../assets/images/restauranfood.png'
 import { Button } from '@mui/material'
+import CommonButton from './common/CommonButton'
 
 const Hero = () => {
   return (
@@ -11,8 +12,8 @@ const Hero = () => {
                 <p className='light-gray'>We are a family owned Mediterranean<br/> 
                 restaurant focused on traditional<br/> recipes served with a modern twist.</p>
                 <p>
-                   <button className='primary-button'>Reserve a table</button>
-                   <Button variant='contained'>Hello</Button>
+                   {/* <button className='primary-button'>Reserve a table</button> */}
+                  <CommonButton>Reserve a table</CommonButton>
                 </p>
             </div>
             <div className="right">
