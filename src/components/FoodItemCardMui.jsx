@@ -6,37 +6,57 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/material';
+import { useTheme } from "@mui/material/styles";
+import MopedIcon from '@mui/icons-material/Moped';
 
 export default function FoodItemCardMui({data}) {
+
+  const theme = useTheme()
+
+  const FoodCardStyles =  {
+    Card:{
+      borderRadius: theme.borderRadius,
+      maxWidth:345,
+      backgroundColor: theme.palette.lightGray,
+      height:'100%',
+      display:'grid',
+      gridTemplateRows: 'auto 1fr auto',
+      gridTemplateColumns: '1fr',
+    },
+    CardImage:{
+      height:200
+    },
+    CardContent:{
+      paddingBottom:0,
+    },
+    ItemMeta:{
+      display:'flex',
+      justifyContent: 'space-between',
+      marginBottom: theme.spacing(2)
+    }
+  }
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card component='article' sx={FoodCardStyles.Card}>
       <CardMedia
-        sx={{ height: 140 }}
+        sx={FoodCardStyles.CardImage}
         image={data.img}
       />
-      <CardContent>
-
-     <Box className='food-item-info'>
-            <Box className='food-item-meta'>
+      <CardContent sx={FoodCardStyles.CardContent}>
+        <Box>
+            <Box sx={FoodCardStyles.ItemMeta}>
                 <Typography variant='h3'>{data.name}</Typography>
-                
-                <span  className='secondary-peach'>${data.price}</span>
+                <Typography sx={{color:theme.palette.secondaryPeach}}>${data.price}</Typography>
             </Box>
-            <div><p  className='primary-green'>{data.description}</p></div>
-     </Box>
-
-        <Typography gutterBottom variant="h5" component="div">
-          {data.name}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-         {data.description}
-        </Typography>
+            <Typography>{data.description}</Typography>
+       </Box>
       </CardContent>
 
-
       <CardActions>
-        <Button size="small">Order a delivery</Button>
+        <Button variant="text" endIcon={<MopedIcon />}>
+          Order a delivery
+        </Button>
       </CardActions>
-    </Card>
-  );
+     </Card>
+  )
 }

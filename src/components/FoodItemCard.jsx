@@ -10,7 +10,7 @@ const FoodItemCard = ({data}) => {
                 <h3  className='primary-green'>{data.name}</h3>
                 <span  className='secondary-peach'>${data.price}</span>
             </div>
-            <div><p  className='primary-green'>{data.description}</p></div>
+            <div><p  className='primary-green'>{data.description}{data.description}</p></div>
            <div> <a href=""  className='primary-green lead-text'>Order a delivery &nbsp;
               <img src={MopedIcon} />
             </a>

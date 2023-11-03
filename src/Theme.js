@@ -21,6 +21,10 @@ export const theme = createTheme({
       dark: "#dcb912",
       light: "#f5d32b",
     },
+    lightGray,
+    darkGray,
+    secondaryCream,
+    secondaryPeach
   },
   typography: {
     fontFamily: "Karla, sans-serif",
@@ -50,5 +54,18 @@ export const theme = createTheme({
     },
   },
   borderRadius: borderRadius,
+  desktopWidth,
+  components: {
+    // Name of the component
+    MuiButton: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          textTransform:'none',
+        }
+      }
+    }
+  }
 });
 

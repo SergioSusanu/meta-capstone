@@ -18,11 +18,6 @@ const Specials = () => {
                 </div>
                 <div className="row specials-cards">
                     {FoodItems.map((item) => {
-                        return <FoodItemCard key={item.id} data={item} />
-                    })}
-                </div>
-                <div className="row specials-cards">
-                    {FoodItems.map((item) => {
                         return <FoodItemCardMui key={item.id} data={item} />
                     })}
                 </div>
