@@ -8,6 +8,8 @@ const lightGray= "#EDEFEE"
 const darkGray= "#333333"
 const borderRadius = "16px"
 const desktopWidth = "1140px"
+const MarkaziFont ="'Markazi Text', serif"
+const KarlaFont = "'Karla', sans-serif";
 
 export const theme = createTheme({
   palette: {
@@ -27,29 +29,27 @@ export const theme = createTheme({
     secondaryPeach
   },
   typography: {
-    fontFamily: "Karla, sans-serif",
+    fontFamily: KarlaFont,
     fontSize: "16px",
     h1: {
-      fontFamily: "Markazi Text",
+      fontFamily: MarkaziFont,
       fontSize: "40px",
     },
     h2: {
-      fontFamily: "Markazi Text",
+      fontFamily: MarkaziFont,
       fontSize: "34px",
     },
     h3: {
       fontSize: "18px",
-      fontFamily: "Karla, sans-serif",
       fontWeight: 700,
       color: primaryGreen,
     },
     leadText: {
-      fontFamily: "Markazi Text",
+      fontFamily: MarkaziFont,
       fontSize: "18px",
     },
     cardTitle: {
       fontSize: "18px",
-      fontFamily: "Karla, sans-serif",
       fontWeight: 700,
     },
   },
