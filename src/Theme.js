@@ -7,7 +7,7 @@ const secondaryCream= "#FBDABB"
 const lightGray= "#EDEFEE"
 const darkGray= "#333333"
 const borderRadius = "16px"
-const desktopWidth = "986px"
+const desktopWidth = "1140px"
 
 export const theme = createTheme({
   palette: {

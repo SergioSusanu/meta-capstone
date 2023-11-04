@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Box } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import { useTheme } from "@mui/material/styles";
 import MopedIcon from '@mui/icons-material/Moped';
 
@@ -14,10 +14,14 @@ export default function FoodItemCardMui({data}) {
   const theme = useTheme()
 
   const FoodCardStyles =  {
+    GridItem:{
+      maxWidth:300
+    },
     Card:{
       borderRadius: theme.borderRadius,
-      maxWidth:345,
       backgroundColor: theme.palette.lightGray,
+      // maxWidth:345,
+      // mx:'auto',
       height:'100%',
       display:'grid',
       gridTemplateRows: 'auto 1fr auto',
@@ -37,6 +41,7 @@ export default function FoodItemCardMui({data}) {
   }
 
   return (
+    <Grid item xs={12} md={6} lg={4} sx={FoodCardStyles.GridItem}>
     <Card component='article' sx={FoodCardStyles.Card}>
       <CardMedia
         sx={FoodCardStyles.CardImage}
@@ -58,5 +63,6 @@ export default function FoodItemCardMui({data}) {
         </Button>
       </CardActions>
      </Card>
+     </Grid>
   )
 }

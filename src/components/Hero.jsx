@@ -2,11 +2,12 @@ import React from 'react'
 import RestFoodImg from './../assets/images/restauranfood.png'
 import { Button } from '@mui/material'
 import CommonButton from './common/CommonButton'
+import GridWrapper from './common/GridWrapper'
 
 const Hero = () => {
   return (
     <section className='hero'>
-        <div className="wrapper">
+        <GridWrapper>
             <div className="left">
                 <h1>Little Lemon<br/><span>Chicago</span></h1>
                 <p className='light-gray'>We are a family owned Mediterranean<br/> 
@@ -20,7 +21,7 @@ const Hero = () => {
                 <img src={RestFoodImg} height="380px" width="auto"
                  alt="Waiter with fresh made Bruschetta's" />
             </div>
-        </div>
+        </GridWrapper>
     </section>
   )
 }

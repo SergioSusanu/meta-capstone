@@ -1,5 +1,4 @@
 import { ThemeProvider } from "@mui/material/styles";
-import "./assets/css/App.css";
 import "./assets/css/Homepage.css";
 import "./assets/css/normalize.css";
 import Footer from "./components/Footer";
@@ -15,9 +14,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
         <div className="homepage">
-          <Header />
+          {/* <Header /> */}
           <Main />
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </ThemeProvider>
     </InitialDataProvider>
