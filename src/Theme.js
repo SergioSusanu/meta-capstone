@@ -31,24 +31,24 @@ export const theme = createTheme({
     fontSize: "16px",
     h1: {
       fontFamily: "Markazi Text",
-      fontSize: "3.5rem",
+      fontSize: "40px",
     },
     h2: {
       fontFamily: "Markazi Text",
-      fontSize: "2.5rem",
+      fontSize: "34px",
     },
     h3: {
-      fontSize: "1.2rem",
+      fontSize: "18px",
       fontFamily: "Karla, sans-serif",
       fontWeight: 700,
       color: primaryGreen,
     },
     leadText: {
       fontFamily: "Markazi Text",
-      fontSize: "1.2rem",
+      fontSize: "18px",
     },
     cardTitle: {
-      fontSize: "1.2rem",
+      fontSize: "18px",
       fontFamily: "Karla, sans-serif",
       fontWeight: 700,
     },
