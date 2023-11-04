@@ -7,7 +7,7 @@ const GridWrapper = ({children}) => {
     const GridWrapperStyles={
         maxWidth:theme.desktopWidth,
         mx:'auto',
-        px:theme.spacing(1)
+        px:theme.spacing(2)
     }
   return (
     <Box sx={GridWrapperStyles}>{children}</Box>

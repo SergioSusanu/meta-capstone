@@ -7,10 +7,10 @@ import About from './About'
 const Main = () => {
   return (
     <main>
-        {/* <Hero /> */}
+        <Hero />
         <Specials />
-        {/* <Testimonials /> */}
-        {/* <About /> */}
+        <Testimonials /> 
+         <About />
     </main>
   )
 }

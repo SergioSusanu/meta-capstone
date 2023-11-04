@@ -1,6 +1,4 @@
 import { ThemeProvider } from "@mui/material/styles";
-import "./assets/css/Homepage.css";
-import "./assets/css/normalize.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -16,7 +14,7 @@ function App() {
         <div className="homepage">
           {/* <Header /> */}
           <Main />
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </ThemeProvider>
     </InitialDataProvider>
