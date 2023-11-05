@@ -7,7 +7,7 @@ const secondaryCream= "#FBDABB"
 const lightGray= "#EDEFEE"
 const darkGray= "#333333"
 const borderRadius = "16px"
-const desktopWidth = "1140px"
+const desktopWidth = "986px"
 const MarkaziFont ="'Markazi Text', serif"
 const KarlaFont = "'Karla', sans-serif";
 

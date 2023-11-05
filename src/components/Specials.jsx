@@ -27,7 +27,7 @@ const Specials = () => {
                     <CommonButton>Online Menu</CommonButton>
                 </Row>
                 <Row>
-                    <Grid container spacing={4}>
+                    <Grid container spacing={2}>
                         {FoodItems.map((item) => {
                             return <FoodItemCardMui2 key={item.id} data={item} />
                         })}

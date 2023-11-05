@@ -18,7 +18,7 @@ const Testimonials = () => {
                 <Typography variant='h2Light'>What people say about us!</Typography>
             </Row>
             <Row>
-                <Grid container spacing={4}>
+                <Grid container spacing={2}>
                     {TestimonialItems.map((item) => {
                         return <TestimonialCard key={item.id} data={item} />
                     })}

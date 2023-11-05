@@ -8,12 +8,13 @@ const TestimonialsData = () => {
     const TestimonialItems = [
       {
         id: 1,
-        name: "Maria Sanchez",
-        rating: 2,
+        name: "Tamika Jakcson",
+        rating: 5,
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        img: imagesPath + "test1.png",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, sed do eiusmod tempor incididunt",
+        img: imagesPath + "test3.png",
       },
+
       {
         id: 2,
         name: "Anthony Clifton",
@@ -23,17 +24,17 @@ const TestimonialsData = () => {
         img: imagesPath + "test2.png",
       },
       {
-        id: 3,
-        name: "Tamika Jakcson",
+        id: 4,
+        name: "Maria Sanchez",
         rating: 5,
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        img: imagesPath + "test3.png",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ",
+        img: imagesPath + "test1.png",
       },
       {
         id: 4,
         name: "Brandon Ming",
-        rating: 3,
+        rating: 5,
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         img: imagesPath + "test4.png",
