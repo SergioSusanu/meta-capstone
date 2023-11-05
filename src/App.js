@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import InitialDataProvider from "./data/InitialDataProvider";
 import CssBaseline from "@mui/material/CssBaseline";
 import {theme} from "./Theme";
+import GridWrapper from "./components/common/GridWrapper";
 
 function App() {
   return (
@@ -12,9 +13,11 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
         <div className="homepage">
-          {/* <Header /> */}
-          <Main />
-          <Footer />
+        
+            {/* <Header /> */}
+            <Main />
+            <Footer />
+       
         </div>
       </ThemeProvider>
     </InitialDataProvider>

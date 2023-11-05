@@ -5,14 +5,12 @@ import GridWrapper from './common/GridWrapper'
 import { Box, Grid, Typography } from '@mui/material'
 import { useTheme } from "@mui/material/styles";
 import MainTitle from './common/MainTitle'
+import Row from './common/Row'
 
 const Hero = () => {
   const theme = useTheme()
 
   const HeroStyles= {
-    main:{
-      py:theme.spacing(2)
-    },
     left:{
       display:'flex',
       flexDirection:'column',
@@ -30,7 +28,8 @@ const Hero = () => {
 
   return (
     <Box component='section' sx={{backgroundColor: theme.palette.primary.main}}>
-        <GridWrapper>
+      <GridWrapper>
+          <Row>
             <Grid container sx={HeroStyles.main}>
               <Grid item xs={12} sm={6} sx={HeroStyles.left}>
                   <MainTitle title='Little Lemon' subTitle='Chicago' titleComponent='h1' subtitleComponent='h2' titleTheme='light'/>
@@ -43,7 +42,8 @@ const Hero = () => {
                   alt="Waiter with fresh made Bruschetta's" />
               </Grid>
             </Grid>
-        </GridWrapper>
+          </Row>
+          </GridWrapper>
     </Box>
   )
 }

@@ -15,13 +15,11 @@ export default function FoodItemCardMui({data}) {
 
   const FoodCardStyles =  {
     GridItem:{
-      maxWidth:300
     },
     Card:{
       borderRadius: theme.borderRadius,
       backgroundColor: theme.palette.lightGray,
-      // maxWidth:345,
-      // mx:'auto',
+      width: '300px',
       height:'100%',
       display:'grid',
       gridTemplateRows: 'auto 1fr auto',
@@ -41,7 +39,7 @@ export default function FoodItemCardMui({data}) {
   }
 
   return (
-    <Grid item xs={12} md={6} lg={4} sx={FoodCardStyles.GridItem}>
+    <Grid sx={FoodCardStyles.GridItem}>
     <Card component='article' sx={FoodCardStyles.Card}>
       <CardMedia
         sx={FoodCardStyles.CardImage}

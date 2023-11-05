@@ -1,23 +1,32 @@
 import React from 'react'
 import TestimonialsData from '../data/TestimonialsData'
 import TestimonialCard from './TestimonialCard';
+import GridWrapper from './common/GridWrapper';
+import Row from './common/Row';
+import { useTheme } from "@mui/material/styles";
+import { Grid, Typography } from '@mui/material';
+
 
 
 const Testimonials = () => {
     const TestimonialItems = TestimonialsData();
+    const theme = useTheme()
   return (
-        <section className='testimonials'>
-            <div className="wrapper">
-                <div className="row testimonials-header">
-                    <h2>What people say about us!</h2>                
-                </div>
-                <div className="row testimonials-cards">
+    <Row sx={{backgroundColor: theme.palette.primary.main}} component="section">
+        <GridWrapper>
+            <Row>
+                <Typography variant='h2Light'>What people say about us!</Typography>
+            </Row>
+            <Row>
+                <Grid container>
                     {TestimonialItems.map((item) => {
                         return <TestimonialCard key={item.id} data={item} />
                     })}
-                </div>
-            </div>
-      </section>
+                </Grid>
+            </Row>
+
+      </GridWrapper>
+      </Row>
   )
 }
 

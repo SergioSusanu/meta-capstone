@@ -26,7 +26,7 @@ export const theme = createTheme({
     lightGray,
     darkGray,
     secondaryCream,
-    secondaryPeach
+    secondaryPeach,
   },
   typography: {
     fontFamily: KarlaFont,
@@ -38,6 +38,12 @@ export const theme = createTheme({
     h2: {
       fontFamily: MarkaziFont,
       fontSize: "34px",
+      color: primaryGreen,
+    },
+    h2Light: {
+      color: lightGray,
+      fontFamily: MarkaziFont,
+      fontSize: "34px",
     },
     h3: {
       fontSize: "18px",
@@ -46,7 +52,7 @@ export const theme = createTheme({
     },
     leadText: {
       fontFamily: MarkaziFont,
-      fontSize: "18px",
+      fontSize: "24px",
     },
     cardTitle: {
       fontSize: "18px",
@@ -62,10 +68,10 @@ export const theme = createTheme({
         // Name of the slot
         root: {
           // Some CSS
-          textTransform:'none',
-        }
-      }
-    }
-  }
+          textTransform: "none",
+        },
+      },
+    },
+  },
 });
 

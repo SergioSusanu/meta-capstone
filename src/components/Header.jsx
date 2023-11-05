@@ -7,12 +7,12 @@ import { Box } from '@mui/material';
 const Header = () => {
   return (
     <header>
-      <GridWrapper>
+    <GridWrapper>
         <Box id='logo'>
           <img src={Logo} />
         </Box>
         <Nav />
-      </GridWrapper>
+     </GridWrapper>
     </header>
 
   )
