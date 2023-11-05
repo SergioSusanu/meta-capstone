@@ -6,28 +6,60 @@ import Phone from './../assets/images/icons/phone.svg'
 import Facebook from './../assets/images/icons/fb.svg'
 import Instagram from './../assets/images/icons/insta.svg'
 import Twitter from './../assets/images/icons/tw.svg'
+import Row from './common/Row'
+import { useTheme } from "@mui/material/styles";
+import GridWrapper from './common/GridWrapper'
+import { Grid } from '@mui/material'
+
+const FooterList = ({children}) => {
+
+   const FooterStyles = {
+      lists:{
+        listStyleType:'none',
+        paddingLeft:0,
+        textDecoration:'none',
+      }
+     }
+
+  return (
+    <ul style={FooterStyles.lists}>
+      {children}
+    </ul>
+  )
+ }
 
 const Footer = () => {
+
+     const theme = useTheme()
+
+     const FooterStyles = {
+      lists:{
+        listStyleType:'none'
+      }
+     }
+
+
+
   return (
-    <footer>
-        <div className='wrapper'>
-          <div className="row">
-                <div>
-                    <img src={footerLogo} />
-                </div>
-                <div>
-                    <p className='lead-text'>Quick Links</p>
-                    <ul>
+    <Row component="footer" sx={{backgroundColor: theme.palette.primary.main}} extraPadding >
+      <GridWrapper>
+        <Grid container spacing={2}>
+          <Grid item xs>
+                <img src={footerLogo} />
+          </Grid>
+           <Grid item xs>
+             <p className='lead-text'>Quick Links</p>
+                    <FooterList>
                       <li><a href="">Home</a></li>
                        <li><a href="">About</a></li>
                         <li><a href="">Menu</a></li>
                          <li><a href="">Reservations</a></li>
                           <li><a href="">Order Online</a></li>
                           <li><a href="">Login</a></li>
-                    </ul>
-                </div>
-                 <div>
-                    <p className='lead-text'>Contact Us</p>
+                    </FooterList>
+          </Grid>
+          <Grid item xs>
+             <p className='lead-text'>Contact Us</p>
                     <ul>
                       <li><a href="">
                         <img src={Location} width="14px" height="auto" />
@@ -40,18 +72,19 @@ const Footer = () => {
                          &nbsp;
                         sales@littlelemon.com</a></li>
                     </ul>
-                </div>
-                 <div>
-                    <p className='lead-text'>Follow Us</p>
+          </Grid>
+
+          <Grid item xs>
+               <p className='lead-text'>Follow Us</p>
                     <div  className='social-info'>
                        <img src={Facebook} width="14px" height="auto"/>
                         <img src={Twitter} width="14px" height="auto"/>
                          <img src={Instagram} width="14px" height="auto"/>
                     </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+          </Grid>
+        </Grid>
+      </GridWrapper>
+    </Row>
   )
 }
 

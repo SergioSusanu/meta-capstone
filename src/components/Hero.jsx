@@ -27,24 +27,22 @@ const Hero = () => {
   }
 
   return (
-    <Box component='section' sx={{backgroundColor: theme.palette.primary.main}}>
+    <Row component='section' sx={{backgroundColor: theme.palette.primary.main}} extraPadding>
       <GridWrapper>
-          <Row>
-            <Grid container sx={HeroStyles.main}>
+            <Grid container >
               <Grid item xs={12} sm={6} sx={HeroStyles.left}>
                   <MainTitle title='Little Lemon' subTitle='Chicago' titleComponent='h1' subtitleComponent='h2' titleTheme='light'/>
                   <Typography sx={{color:theme.palette.lightGray}} variant='leadText'>We are a family owned Mediterranean 
                   restaurant focused on traditional recipes served with a modern twist.</Typography>
-                    <CommonButton>Reserve a table</CommonButton>
+                  <CommonButton>Reserve a table</CommonButton>
               </Grid>
               <Grid item xs={12} sm={6} sx={HeroStyles.right}>
-                  <img src={RestFoodImg} height="380px" width="364"
+                  <img src={RestFoodImg}  maxWidth="364px" 
                   alt="Waiter with fresh made Bruschetta's" />
               </Grid>
             </Grid>
-          </Row>
           </GridWrapper>
-    </Box>
+    </Row>
   )
 }
 
