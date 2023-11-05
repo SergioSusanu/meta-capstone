@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import SpecialsData from '../data/SpecialsData'
 import CommonButton from './common/CommonButton';
-import FoodItemCardMui from './FoodItemCardMui';
+import FoodItemCardMui2 from './FoodItemCardMui2';
 import { Box, Grid, Typography } from '@mui/material';
 import { useTheme } from "@mui/material/styles";
 import GridWrapper from './common/GridWrapper';
@@ -15,6 +15,7 @@ const Specials = () => {
    const FoodItemsStyles = {
      rowSpacing:1,
      justifyContent:"space-between",
+     columnSpacing:1,
 
    }
 
@@ -26,9 +27,9 @@ const Specials = () => {
                     <CommonButton>Online Menu</CommonButton>
                 </Row>
                 <Row>
-                    <Grid container {...FoodItemsStyles} rowSpacing={3}>
+                    <Grid container spacing={4}>
                         {FoodItems.map((item) => {
-                            return <FoodItemCardMui key={item.id} data={item} />
+                            return <FoodItemCardMui2 key={item.id} data={item} />
                         })}
                     </Grid>
                 </Row>

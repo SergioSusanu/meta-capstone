@@ -69,6 +69,7 @@ export const theme = createTheme({
         root: {
           // Some CSS
           textTransform: "none",
+          fontSize: '1rem'
         },
       },
     },
