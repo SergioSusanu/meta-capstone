@@ -11,7 +11,8 @@ const desktopWidth = "986px"
 const MarkaziFont ="'Markazi Text', serif"
 const KarlaFont = "'Karla', sans-serif";
 
-export const theme = createTheme({
+const theme = createTheme({
+  themeMode: 'light',
   palette: {
     primary: {
       main: primaryGreen,
@@ -30,32 +31,37 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: KarlaFont,
-    fontSize: "16px",
+    fontSize: 16,
     h1: {
       fontFamily: MarkaziFont,
-      fontSize: "40px",
+      fontSize: 40,
     },
     h2: {
       fontFamily: MarkaziFont,
-      fontSize: "34px",
+      fontSize: 34,
       color: primaryGreen,
     },
     h2Light: {
       color: lightGray,
       fontFamily: MarkaziFont,
-      fontSize: "34px",
+      fontSize: 34,
     },
     h3: {
-      fontSize: "18px",
+      fontSize: 18,
       fontWeight: 700,
       color: primaryGreen,
     },
+    h3Light: {
+      fontSize: 18,
+      fontWeight: 700,
+      color: lightGray,
+    },
     leadText: {
       fontFamily: MarkaziFont,
-      fontSize: "24px",
+      fontSize: 24,
     },
     cardTitle: {
-      fontSize: "18px",
+      fontSize: 18,
       fontWeight: 700,
     },
   },
@@ -69,10 +75,11 @@ export const theme = createTheme({
         root: {
           // Some CSS
           textTransform: "none",
-          fontSize: '1rem'
+          fontSize: "1rem",
         },
       },
     },
   },
 });
 
+export default theme;
