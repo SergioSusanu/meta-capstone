@@ -4,23 +4,18 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import InitialDataProvider from "./data/InitialDataProvider";
 import CssBaseline from "@mui/material/CssBaseline";
-import LocalTheme from "./Theme";
-import { useState } from "react";
+import theme from "./Theme";
 
 function App() {
-
-  const [theme, setTheme] = useState(LocalTheme)
 
   return (
     <InitialDataProvider>
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
         <div className="homepage">
-        
             {/* <Header /> */}
             <Main />
             <Footer />
-       
         </div>
       </ThemeProvider>
     </InitialDataProvider>
