@@ -13,7 +13,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
         <div className="homepage">
-            {/* <Header /> */}
+            <Header />
             <Main />
             <Footer />
         </div>

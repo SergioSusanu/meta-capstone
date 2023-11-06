@@ -1,20 +1,15 @@
 import React from 'react'
-import Nav from './Nav'
-import Logo from './../assets/images/Logo.svg'
 import GridWrapper from './common/GridWrapper'
-import { Box } from '@mui/material';
+import { useTheme } from "@mui/material/styles";
+import AppBar from './AppBar'
+import Row from './common/Row'
 
 const Header = () => {
+  const theme = useTheme()
   return (
-    <header>
-    <GridWrapper>
-        <Box id='logo'>
-          <img src={Logo} />
-        </Box>
-        <Nav />
-     </GridWrapper>
-    </header>
-
+      <GridWrapper >
+        <AppBar />
+      </GridWrapper>
   )
 }
 
