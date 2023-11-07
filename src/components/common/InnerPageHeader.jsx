@@ -12,7 +12,7 @@ const InnerPageHeader = ({children}) => {
     textAlign:'center',
     }}
     >
-        <Typography variant='h1' sx={{color:theme.palette.lightGray, textTransform:'capitalize'}}>{pageName}</Typography>
+        <Typography variant='h1' sx={{color:theme.palette.lightGray, textTransform:'capitalize'}}>{children ? children : pageName}</Typography>
     </Row>
   )
 }
