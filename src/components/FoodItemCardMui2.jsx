@@ -52,7 +52,7 @@ export default function FoodItemCardMui({data}) {
                             <Typography>{data.description}</Typography>
                         </Grid>
                         <Grid item>
-                            <Button variant="text" endIcon={<MopedIcon />} sx={{fontWeight:'bold'}}>
+                            <Button href='order' variant="text" endIcon={<MopedIcon />} sx={{fontWeight:'bold'}}>
                                 Order a delivery
                             </Button>
                         </Grid>

@@ -26,11 +26,11 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" elevation={0}> 
+    <AppBar position="static" elevation={0}>
         <Toolbar disableGutters sx={{backgroundColor:'#ffffff'}}>
 
           {/* DESKTOP */}
-          <img src={Logo} />
+          <Link to='/'><img src={Logo} /></Link>
 
           {/* DESKTOP MENU */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:'end' }}>

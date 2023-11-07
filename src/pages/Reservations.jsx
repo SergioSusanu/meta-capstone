@@ -1,8 +1,14 @@
 import React from 'react'
+import InnerPageHeader from '../components/common/InnerPageHeader'
+import { Box } from '@mui/material'
+
 
 const Reservations = () => {
   return (
-    <div>Reservations</div>
+     <Box>
+      <InnerPageHeader />
+      Reservations
+    </Box>
   )
 }
 

@@ -6,7 +6,11 @@ const Row = (props) => {
   const theme = useTheme()
   const padding = props.extraPadding ? 4 : 2
 
-  return <Box {...props} sx={{ ...props.sx, py: theme.spacing(padding) }}></Box>;
+  return <Box {...props} 
+  sx={{ ...props.sx, 
+    py: theme.spacing(padding), 
+    
+  }}></Box>;
 }
 
 export default Row

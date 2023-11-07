@@ -6,6 +6,7 @@ import { Box, Grid, Typography } from '@mui/material';
 import { useTheme } from "@mui/material/styles";
 import GridWrapper from './common/GridWrapper';
 import Row from './common/Row';
+import { Link } from 'react-router-dom';
 
 const Specials = () => {
 
@@ -24,7 +25,7 @@ const Specials = () => {
             <GridWrapper>
                 <Row sx={{display:'flex', justifyContent:'space-between'}}>
                      <Typography variant='h2' className='primary-green'>This week's specials</Typography>
-                    <CommonButton>Online Menu</CommonButton>
+                    <Link to='/menu'><CommonButton>Online Menu</CommonButton></Link>
                 </Row>
                 <Row>
                     <Grid container spacing={2}>
