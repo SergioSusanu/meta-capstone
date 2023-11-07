@@ -11,6 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { useTheme } from "@mui/material/styles";
 import Logo from './../assets/images/Logo.svg'
 import MainMenuData from './menu/MainMenuData'
+import { Link } from 'react-router-dom';
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -34,7 +35,7 @@ function ResponsiveAppBar() {
           {/* DESKTOP MENU */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:'end' }}>
             {MainMenuData.map((page) => (
-              <Button
+              <Button href={page.link}
                 key={page.id}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: theme.palette.primary.main, display: 'block' }}
@@ -75,9 +76,11 @@ function ResponsiveAppBar() {
               }}
             >
               {MainMenuData.map((page) => (
-                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" sx={{color:theme.palette.primary.main}}>{page.title}</Typography>
-                </MenuItem>
+                <Link style={theme.links} to={page.link}> 
+                  <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                    {page.title}
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>

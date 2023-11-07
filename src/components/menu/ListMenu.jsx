@@ -4,6 +4,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import { Link } from 'react-router-dom';
 
 const ListMenu = ({Menu, dense}) => {
 
@@ -17,9 +18,11 @@ const ListMenu = ({Menu, dense}) => {
             {menuItem.icon ? (<ListItemIcon
               sx={{minWidth:36, color:theme.palette.lightGray}}
             >{menuItem.icon}</ListItemIcon>) : ''}
-             <ListItemText primary={menuItem.title}
-              sx={{ color:theme.palette.lightGray}}
-             />
+            <Link to={menuItem.link} style={theme.links}>
+              <ListItemText primary={menuItem.title}
+                sx={{ color:theme.palette.lightGray}}
+              />
+             </Link>
           </ListItem>
         )
       })}

@@ -12,6 +12,10 @@ const MarkaziFont ="'Markazi Text', serif"
 const KarlaFont = "'Karla', sans-serif";
 
 const theme = createTheme({
+  links:{
+    textDecoration:'none',
+    color:primaryGreen
+  },
   themeMode: 'light',
   palette: {
     primary: {
@@ -32,6 +36,7 @@ const theme = createTheme({
   typography: {
     fontFamily: KarlaFont,
     fontSize: 16,
+    textDecoration:'none',
     h1: {
       fontFamily: MarkaziFont,
       fontSize: 40,
