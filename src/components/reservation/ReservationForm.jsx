@@ -5,13 +5,16 @@ import Row from '../common/Row';
 import { useTheme } from "@mui/material/styles";
 import { Select, MenuItem } from '@mui/material';
 import ReservationFormStyles from './ReservationFormStyles';
+import dayjs from 'dayjs';
 
 const initialData = {
   date: null,
-  time: '',
+  time: null,
   guests: 1,
   ocassion:''
 }
+
+const AvailableTimeSlots = ['17:00','17:30','18:00','18:30','19:00','19:30','20:00']
 
 function ReservationForm() {
   const [selectedDate, setSelectedDate] = React.useState(null);
@@ -36,23 +39,32 @@ function ReservationForm() {
   return (
     <Row extraPadding>
     <form onSubmit={handleSubmit} style={ReservationFormStyles()}>
+      {/******* SELECT TIME ******/}
       <DatePicker
         label="Date"
         name='date'
         value={selectedDate}
         onChange={handleDateChange}
       />
-      <TextField
-        name='time'
-        value={reservationData.time}
-        onChange={handleChange}
-        label="Time"
-        type="time"
-        InputLabelProps={{
-          shrink: true,
-        }}
-        required
-      />
+
+        {/******* SELECT TIME ******/}
+       <FormControl fullWidth>
+        <InputLabel id="select-time">Time</InputLabel>
+        <Select
+          labelId="select-time"
+          id="select-time"
+          value={reservationData.time}
+          label="Time"
+          onChange={handleChange}
+          name='time'
+        >
+           {AvailableTimeSlots.map((slot,index) => {
+            return <MenuItem key={index} value={slot}>{slot}</MenuItem>
+          })}
+        </Select>
+      </FormControl>
+
+      {/******* SELECT NUMBER OF GUESTS ******/}
       <TextField
         name='guests'
         onChange={handleChange}
@@ -66,11 +78,12 @@ function ReservationForm() {
         inputProps={{ min: 1, max: 10 }}
       />
 
+      {/******* SELECT Ocassion ******/}
         <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Ocassion</InputLabel>
+            <InputLabel id="ocassion">Ocassion</InputLabel>
             <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+                labelId="ocassion"
+                id="ocassion"
                 value={reservationData.ocassion}
                 label="Ocassion"
                 name="ocassion"
