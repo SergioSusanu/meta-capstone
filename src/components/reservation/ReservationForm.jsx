@@ -1,46 +1,51 @@
 import React, { useState } from 'react';
 import { TextField, Button, FormControl, InputLabel } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers';
-import Row from './Row';
+import Row from '../common/Row';
 import { useTheme } from "@mui/material/styles";
 import { Select, MenuItem } from '@mui/material';
+import ReservationFormStyles from './ReservationFormStyles';
+
+const initialData = {
+  date: null,
+  time: '',
+  guests: 1,
+  ocassion:''
+}
 
 function ReservationForm() {
   const [selectedDate, setSelectedDate] = React.useState(null);
-  const theme = useTheme()
-  const [selectedOption, setSelectedOption] = useState(''); 
+  const [reservationData, setReservationData] = useState(initialData)
 
-  const handleChange = (event) => {
-    setSelectedOption(event.target.value);
+  const handleChange = (e) => {
+      setReservationData((prev) => {
+      return {...prev, [e.target.name]:e.target.value}
+    })
   };
 
   const handleDateChange = (date) => {
-    setSelectedDate(date);
+   setReservationData((prev) => {
+      return {...prev, date}
+    })
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Reservation submitted!');
   };
-
-  const FormStyles = {
-    display:'flex',
-    flexDirection:'column',
-    gap: theme.spacing(2),
-    width:380,
-    marginLeft:'auto',
-    marginRight:'auto'
-  }
 
   return (
     <Row extraPadding>
-    <form onSubmit={handleSubmit} style={FormStyles}>
+    <form onSubmit={handleSubmit} style={ReservationFormStyles()}>
       <DatePicker
         label="Date"
+        name='date'
         value={selectedDate}
         onChange={handleDateChange}
       />
       <TextField
+        name='time'
+        value={reservationData.time}
+        onChange={handleChange}
         label="Time"
         type="time"
         InputLabelProps={{
@@ -49,6 +54,9 @@ function ReservationForm() {
         required
       />
       <TextField
+        name='guests'
+        onChange={handleChange}
+        value={reservationData.guests}
         label="Number of Guests"
         type="number"
         InputLabelProps={{
@@ -63,8 +71,9 @@ function ReservationForm() {
             <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={selectedOption}
+                value={reservationData.ocassion}
                 label="Ocassion"
+                name="ocassion"
                 onChange={handleChange}
             >
                 <MenuItem value="birthday">Birthday</MenuItem>

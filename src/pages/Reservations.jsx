@@ -1,7 +1,7 @@
 import React from 'react'
 import InnerPageHeader from '../components/common/InnerPageHeader'
 import { Box } from '@mui/material'
-import ReservationForm from '../components/common/ReservationForm'
+import ReservationForm from './../components/reservation/ReservationForm'
 
 
 const Reservations = () => {
