@@ -2,22 +2,18 @@ import React, { useState } from 'react';
 import { TextField, Button, FormControl, InputLabel } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers';
 import Row from '../common/Row';
-import { useTheme } from "@mui/material/styles";
 import { Select, MenuItem } from '@mui/material';
 import ReservationFormStyles from './ReservationFormStyles';
-import dayjs from 'dayjs';
 
 const initialData = {
   date: null,
-  time: null,
+  time:  '',
   guests: 1,
   ocassion:''
 }
 
-const AvailableTimeSlots = ['17:00','17:30','18:00','18:30','19:00','19:30','20:00']
 
-function ReservationForm() {
-  const [selectedDate, setSelectedDate] = React.useState(null);
+function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
   const [reservationData, setReservationData] = useState(initialData)
 
   const handleChange = (e) => {
@@ -30,20 +26,22 @@ function ReservationForm() {
    setReservationData((prev) => {
       return {...prev, date}
     })
+    dispatchDateChange({date:date})
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    submitForm(reservationData)
   };
 
   return (
-    <Row extraPadding>
+    <Row>
     <form onSubmit={handleSubmit} style={ReservationFormStyles()}>
       {/******* SELECT TIME ******/}
       <DatePicker
         label="Date"
         name='date'
-        value={selectedDate}
+        value={reservationData.date}
         onChange={handleDateChange}
       />
 
@@ -58,7 +56,7 @@ function ReservationForm() {
           onChange={handleChange}
           name='time'
         >
-           {AvailableTimeSlots.map((slot,index) => {
+           {availableTimes.map((slot,index) => {
             return <MenuItem key={index} value={slot}>{slot}</MenuItem>
           })}
         </Select>
@@ -101,4 +99,4 @@ function ReservationForm() {
     </Row>
   );
 }
- export default ReservationForm
+ export default BookingForm

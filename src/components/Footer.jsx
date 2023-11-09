@@ -21,7 +21,7 @@ const Footer = () => {
      }
 
   return (
-    <Row component="footer" sx={{backgroundColor: theme.palette.primary.main}} extraPadding >
+    <Row component="footer" sx={{backgroundColor: theme.palette.primary.main}} >
       <GridWrapper>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6} lg={3}>
@@ -30,12 +30,12 @@ const Footer = () => {
            <Grid item xs={12} sm={6}  lg={3}>
              <Typography variant='h3Light'
              >Quick Links</Typography>
-            <ListMenu  Menu={MainMenuData} dense='true'/>
+            <ListMenu  Menu={MainMenuData} dense={true}/>
           </Grid>
           <Grid item xs={12} sm={6}  lg={4}>
               <Typography variant='h3Light'
              >Contact Us</Typography>
-                 <ListMenu  Menu={ContactMenuData} dense='true'/>
+                 <ListMenu  Menu={ContactMenuData} dense={true}/>
           </Grid>
 
           <Grid item xs={12} sm={6}  lg={2}>

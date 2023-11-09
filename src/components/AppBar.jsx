@@ -76,7 +76,7 @@ function ResponsiveAppBar() {
               }}
             >
               {MainMenuData.map((page) => (
-                <Link style={theme.links} to={page.link}> 
+                <Link style={theme.links} to={page.link}  key={page.id}> 
                   <MenuItem key={page.id} onClick={handleCloseNavMenu}>
                     {page.title}
                   </MenuItem>

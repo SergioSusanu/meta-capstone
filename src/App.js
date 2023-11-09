@@ -5,7 +5,7 @@ import theme from "./Theme";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import SharedLayout from "./pages/SharedLayout";
 import HomePage from './pages/HomePage'
-import Reservations from './pages/Reservations'
+import Reservations from './pages/BookingPage'
 import About from './pages/About'
 import Menu from './pages/Menu'
 import Order from "./pages/Order"
