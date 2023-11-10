@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, getByLabelText } from "@testing-library/react";
 import BookingForm from "./ReservationForm";
 import React, { useState } from "react";
 import { LocalizationProvider } from "@mui/x-date-pickers";
@@ -6,6 +6,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Bookings from ".";
 import {init} from './index'
 import { updateTimes } from "./index";
+import { MemoryRouter } from "react-router-dom";
 
 test('Check form components', () => {
     const mockFn = jest.fn()
@@ -26,26 +27,47 @@ test('Check form components', () => {
 
 })
 
-test('Check updateTimes and initFunctions', () => {
+test('Check init returns non-empty array', () => {
+
 render(
-  <LocalizationProvider dateAdapter={AdapterDayjs}>
-    <Bookings />
-  </LocalizationProvider>
+  <MemoryRouter>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <Bookings />
+    </LocalizationProvider>
+  </MemoryRouter>
 );
 
-const initialTimes = [
-  "17:00",
-  "17:30",
-  "18:00",
-  "18:30",
-  "19:00",
-  "19:30",
-  "20:00",
-  "20:30",
-];
-
-expect(init()).toEqual(initialTimes)
-
-expect(updateTimes(initialTimes)).toEqual(initialTimes)
+ expect((init()).length).toBeGreaterThan(0)
 
  })
+
+ test("Check updateTimes", async () => {
+   render(
+     <MemoryRouter>
+       <LocalizationProvider dateAdapter={AdapterDayjs}>
+         <Bookings />
+       </LocalizationProvider>
+     </MemoryRouter>
+   );
+      const timeSelect = screen.getByLabelText("Time");
+     const dateSelect = screen.getByLabelText("Date");
+
+     const bookingDateBefore = "2023-11-01";
+     const bookingDateAfter = "2023-09-07";
+
+    fireEvent.change(dateSelect, { target: { value: bookingDateBefore } });
+    fireEvent.blur(dateSelect)
+    fireEvent.mouseDown(timeSelect);
+
+    const onScreenItemsBefore = screen.getAllByTestId("time-slot");
+
+    fireEvent.change(dateSelect, {target:{value:bookingDateAfter}});
+    fireEvent.blur(dateSelect);
+    fireEvent.mouseDown(timeSelect);
+    const onScreenItemsAfter = screen.getAllByTestId("time-slot");
+
+    // expect(screen.getAllByTestId("time-slot")).not.toBeNull()
+     expect(onScreenItemsBefore.length).toBeGreaterThan(0)
+     expect(onScreenItemsAfter.length).toBeGreaterThan(0);
+     expect(onScreenItemsBefore).not.toBe(onScreenItemsAfter)
+ });

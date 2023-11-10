@@ -4,17 +4,6 @@ import { useReducer } from "react";
 import {fetchAPI, submitAPI} from './../../utils/fakeAPI'
 import { useNavigate } from 'react-router-dom';
 
-const initialTimes = [
-  "17:00",
-  "17:30",
-  "18:00",
-  "18:30",
-  "19:00",
-  "19:30",
-  "20:00",
-  "20:30",
-];
-
 export const init = () => {
   return fetchAPI(new Date())
 }
@@ -29,7 +18,7 @@ export const updateTimes = (state, action) => {
 
 const Bookings = () => {
 
-  const [availableTimes, dispatchDateChange] = useReducer(updateTimes, initialTimes, init)
+  const [availableTimes, dispatchDateChange] = useReducer(updateTimes, [], init)
   const navigate = useNavigate()
 
   const submitForm = (reservationData) =>{

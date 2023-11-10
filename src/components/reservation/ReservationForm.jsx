@@ -17,6 +17,7 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
   const [reservationData, setReservationData] = useState(initialData)
 
   const handleChange = (e) => {
+      console.log(e.target.name+" yes");
       setReservationData((prev) => {
       return {...prev, [e.target.name]:e.target.value}
     })
@@ -55,9 +56,10 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
           label="Time"
           onChange={handleChange}
           name='time'
+          data-testid="time-select"
         >
            {availableTimes.map((slot,index) => {
-            return <MenuItem key={index} value={slot}>{slot}</MenuItem>
+            return <MenuItem key={index} value={slot} data-testid="time-slot">{slot}</MenuItem>
           })}
         </Select>
       </FormControl>
