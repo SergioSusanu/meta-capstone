@@ -12,6 +12,7 @@ import Order from "./pages/Order"
 import Login from "./pages/Login"
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import ReservationSuccess from "./components/reservation/ReservationSuccess";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
               <Route path="/" element={<SharedLayout />}>
                 <Route index element={<HomePage />}></Route>
                 <Route path="reservations" element={<Reservations />}></Route>
+                <Route path="reservation-success" element={<ReservationSuccess />}></Route>
                 <Route path="about" element={<About />}></Route>
                 <Route path="menu" element={<Menu />}></Route>
                 <Route path="order" element={<Order />}></Route>

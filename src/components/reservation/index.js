@@ -2,6 +2,7 @@ import React from 'react'
 import BookingForm from './ReservationForm'
 import { useReducer } from "react";
 import {fetchAPI, submitAPI} from './../../utils/fakeAPI'
+import { useNavigate } from 'react-router-dom';
 
 const initialTimes = [
   "17:00",
@@ -23,16 +24,18 @@ export const updateTimes = (state, action) => {
   if (action.type === "fetch-slots") {
     return fetchAPI(new Date(action.payload))
   }
-  //remove slot
   return state
 }
 
 const Bookings = () => {
 
   const [availableTimes, dispatchDateChange] = useReducer(updateTimes, initialTimes, init)
+  const navigate = useNavigate()
 
   const submitForm = (reservationData) =>{
-    console.log(reservationData)
+     if (submitAPI(reservationData)) {
+      navigate("/reservation-success");
+     }
   }
   return (
     <BookingForm
