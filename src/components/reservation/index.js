@@ -1,6 +1,7 @@
 import React from 'react'
 import BookingForm from './ReservationForm'
 import { useReducer } from "react";
+import {fetchAPI, submitAPI} from './../../utils/fakeAPI'
 
 const initialTimes = [
   "17:00",
@@ -14,11 +15,14 @@ const initialTimes = [
 ];
 
 export const init = () => {
-  return initialTimes
+  return fetchAPI(new Date())
 }
 
 export const updateTimes = (state, action) => {
-  //add slot
+  //fetch avialable slots
+  if (action.type === "fetch-slots") {
+    return fetchAPI(new Date(action.payload))
+  }
   //remove slot
   return state
 }

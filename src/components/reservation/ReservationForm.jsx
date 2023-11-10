@@ -26,7 +26,7 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
    setReservationData((prev) => {
       return {...prev, date}
     })
-    dispatchDateChange({date:date})
+    dispatchDateChange({type:"fetch-slots", payload:date})
   };
 
   const handleSubmit = (event) => {
