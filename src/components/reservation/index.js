@@ -13,12 +13,11 @@ const initialTimes = [
   "20:30",
 ];
 
-const init = () => {
+export const init = () => {
   return initialTimes
 }
 
-const updateTimes = (state, action) => {
-  console.log(action.date);
+export const updateTimes = (state, action) => {
   //add slot
   //remove slot
   return state

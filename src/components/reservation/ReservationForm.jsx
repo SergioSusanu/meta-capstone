@@ -86,13 +86,14 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
                 label="Ocassion"
                 name="ocassion"
                 onChange={handleChange}
+                data-testid="ocassion"
             >
                 <MenuItem value="birthday">Birthday</MenuItem>
                 <MenuItem value="anniversary">Anniversary</MenuItem>
             </Select>
         </FormControl>
 
-      <Button variant="contained" color="primary" type="submit">
+      <Button variant="contained" color="primary" type="submit"   data-testid = "submit" >
         Submit
       </Button>
     </form>
