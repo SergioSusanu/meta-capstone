@@ -4,22 +4,29 @@ import { DatePicker } from '@mui/x-date-pickers';
 import Row from '../common/Row';
 import { Select, MenuItem } from '@mui/material';
 import ReservationFormStyles from './ReservationFormStyles';
+import dayjs from 'dayjs';
 
 const initialData = {
-  date: null,
+  date: dayjs(),
   time:  '',
   guests: 1,
   ocassion:''
+}
+const initialTouch = {
+  date: false,
+  time:  false,
+  guests: false,
+  ocassion:false
 }
 
 
 function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
   const [reservationData, setReservationData] = useState(initialData)
+  const [touched, setTouched] = useState(initialTouch)
 
   const handleChange = (e) => {
-      console.log(e.target.name+" yes");
       setReservationData((prev) => {
-      return {...prev, [e.target.name]:e.target.value}
+       return {...prev, [e.target.name]:e.target.value}
     })
   };
 
@@ -29,6 +36,12 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
     })
     dispatchDateChange({type:"fetch-slots", payload:date})
   };
+
+  const handleBlur = (e) => {
+    setTouched((prev) => {
+       return {...prev, [e.target.name]:true}
+    })
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -42,8 +55,10 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
       <DatePicker
         label="Date"
         name='date'
-        value={reservationData.date}
+         value={reservationData.date}
         onChange={handleDateChange}
+        onBlur={handleBlur}
+
       />
 
         {/******* SELECT TIME ******/}
@@ -68,6 +83,7 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
       <TextField
         name='guests'
         onChange={handleChange}
+        onBlur={handleBlur}
         value={reservationData.guests}
         label="Number of Guests"
         type="number"
@@ -76,6 +92,8 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
         }}
         required
         inputProps={{ min: 1, max: 10 }}
+        helperText="Please enter between 1 and 10 people"
+        error = {touched.guests && (reservationData.guests === '' || reservationData.guests > 10 || reservationData.guests < 1)}
       />
 
       {/******* SELECT Ocassion ******/}
