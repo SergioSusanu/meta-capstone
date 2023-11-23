@@ -27,6 +27,27 @@ test('Check form components', () => {
 
 })
 
+ test("Check html attributes for the inputs", () => {
+     const { container } = render(
+       <MemoryRouter>
+         <LocalizationProvider dateAdapter={AdapterDayjs}>
+           <Bookings />
+         </LocalizationProvider>
+       </MemoryRouter>
+     );
+
+     const input = container.querySelector('input[name="guests"]');
+     expect(input.type).toBe("number");
+     expect(input).toHaveAttribute("min", "1");
+     expect(input).toHaveAttribute("required");
+
+     const timeInput = container.querySelector('input[name="time"]');
+     expect(timeInput).toHaveAttribute("required");
+
+     const ocassionInput = container.querySelector('input[name="ocassion"]');
+     expect(ocassionInput).toHaveAttribute("required");
+ });
+
 test('Check init returns non-empty array', () => {
 
 render(
@@ -70,4 +91,6 @@ render(
      expect(onScreenItemsBefore.length).toBeGreaterThan(0)
      expect(onScreenItemsAfter.length).toBeGreaterThan(0);
      expect(onScreenItemsBefore).not.toBe(onScreenItemsAfter)
+
+
  });

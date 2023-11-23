@@ -88,6 +88,7 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
       {/******* SELECT NUMBER OF GUESTS ******/}
       <TextField
         name='guests'
+        data-testid="guests"
         onChange={handleChange}
         onBlur={handleBlur}
         value={reservationData.guests}
