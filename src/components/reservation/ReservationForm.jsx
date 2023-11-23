@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, FormControl, InputLabel } from '@mui/material';
+import { TextField, Button, FormControl, InputLabel, FormHelperText } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers';
 import Row from '../common/Row';
 import { Select, MenuItem } from '@mui/material';
@@ -23,6 +23,7 @@ const initialTouch = {
 function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
   const [reservationData, setReservationData] = useState(initialData)
   const [touched, setTouched] = useState(initialTouch)
+  const guestsError = touched.guests && (reservationData.guests === '' || reservationData.guests > 10 || reservationData.guests < 1)
 
   const handleChange = (e) => {
       setReservationData((prev) => {
@@ -38,6 +39,7 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
   };
 
   const handleBlur = (e) => {
+    console.log("Blur");
     setTouched((prev) => {
        return {...prev, [e.target.name]:true}
     })
@@ -51,14 +53,15 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
   return (
     <Row>
     <form onSubmit={handleSubmit} style={ReservationFormStyles()}>
-      {/******* SELECT TIME ******/}
+      {/******* SELECT DATE ******/}
       <DatePicker
         label="Date"
         name='date'
-         value={reservationData.date}
+        value={reservationData.date}
         onChange={handleDateChange}
         onBlur={handleBlur}
-
+        minDate={dayjs()}
+        required
       />
 
         {/******* SELECT TIME ******/}
@@ -70,13 +73,16 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
           value={reservationData.time}
           label="Time"
           onChange={handleChange}
+          onBlur={handleBlur}
           name='time'
           data-testid="time-select"
+          required
         >
            {availableTimes.map((slot,index) => {
             return <MenuItem key={index} value={slot} data-testid="time-slot">{slot}</MenuItem>
           })}
         </Select>
+          {/* <FormHelperText>Please select an option</FormHelperText> */}
       </FormControl>
 
       {/******* SELECT NUMBER OF GUESTS ******/}
@@ -92,8 +98,8 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
         }}
         required
         inputProps={{ min: 1, max: 10 }}
-        helperText="Please enter between 1 and 10 people"
-        error = {touched.guests && (reservationData.guests === '' || reservationData.guests > 10 || reservationData.guests < 1)}
+        helperText={guestsError ? "Please enter between 1 and 10 people" : ""}
+        error = {guestsError}
       />
 
       {/******* SELECT Ocassion ******/}
@@ -107,6 +113,7 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
                 name="ocassion"
                 onChange={handleChange}
                 data-testid="ocassion"
+                required
             >
                 <MenuItem value="birthday">Birthday</MenuItem>
                 <MenuItem value="anniversary">Anniversary</MenuItem>
