@@ -11,7 +11,7 @@ const SocialMediaIconList = ({menu}) => {
     <Box sx={{marginTop: theme.spacing(2)}}>
     <Grid container spacing={2}>
         {menu.map((item) => {
-            return (<Grid key={item.id} item sx={{color:textColor}}>{item.icon}</Grid>)
+            return (<Grid key={item.id} item sx={{color:textColor}} aria-label='Social icon'>{item.icon}</Grid>)
         })}
     </Grid>
     </Box>

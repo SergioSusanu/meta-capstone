@@ -25,7 +25,7 @@ const Footer = () => {
       <GridWrapper>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6} lg={3}>
-                <img src={footerLogo} />
+                <img src={footerLogo} aria-label='logo'/>
           </Grid>
            <Grid item xs={12} sm={6}  lg={3}>
              <Typography variant='h3Light'

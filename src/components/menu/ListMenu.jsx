@@ -14,7 +14,7 @@ const ListMenu = ({Menu, dense}) => {
     <List dense={dense}>
       {Menu.map((menuItem) => {
         return (
-          <ListItem key={menuItem.id} disableGutters>
+          <ListItem key={menuItem.id} disableGutters aria-label='footer menu item'>
             {menuItem.icon ? (<ListItemIcon
               sx={{minWidth:36, color:theme.palette.lightGray}}
             >{menuItem.icon}</ListItemIcon>) : ''}

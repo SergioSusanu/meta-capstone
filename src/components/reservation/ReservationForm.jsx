@@ -62,6 +62,8 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
         onBlur={handleBlur}
         minDate={dayjs()}
         required
+        aria-label="Select Date"
+        aria-required="true"
       />
 
         {/******* SELECT TIME ******/}
@@ -77,6 +79,8 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
           name='time'
           data-testid="time-select"
           required
+           aria-label="Select Time"
+          aria-required="true"
         >
            {availableTimes.map((slot,index) => {
             return <MenuItem key={index} value={slot} data-testid="time-slot">{slot}</MenuItem>
@@ -101,6 +105,8 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
         inputProps={{ min: 1, max: 10 }}
         helperText={guestsError ? "Please enter between 1 and 10 people" : ""}
         error = {guestsError}
+         aria-label="Number of guests"
+        aria-required="true"
       />
 
       {/******* SELECT Ocassion ******/}
@@ -115,13 +121,15 @@ function BookingForm({availableTimes, submitForm, dispatchDateChange}) {
                 onChange={handleChange}
                 data-testid="ocassion"
                 required
+                aria-label="Select Ocassion"
+                aria-required="true"
             >
                 <MenuItem value="birthday">Birthday</MenuItem>
                 <MenuItem value="anniversary">Anniversary</MenuItem>
             </Select>
         </FormControl>
 
-      <Button variant="contained" color="primary" type="submit"   data-testid = "submit" >
+      <Button variant="contained" color="primary" type="submit"   data-testid = "submit"    aria-label="Submit form">
         Submit
       </Button>
     </form>

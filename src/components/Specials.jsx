@@ -25,7 +25,7 @@ const Specials = () => {
             <GridWrapper>
                 <Row sx={{display:'flex', justifyContent:'space-between'}}>
                      <Typography variant='h2' className='primary-green'>This week's specials</Typography>
-                    <Link to='/menu'><CommonButton>Online Menu</CommonButton></Link>
+                    <Link to='/menu'><CommonButton aria-label='online menu'>Online Menu</CommonButton></Link>
                 </Row>
                 <Row>
                     <Grid container spacing={2}>

@@ -30,7 +30,7 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters sx={{backgroundColor:'#ffffff'}}>
 
           {/* DESKTOP */}
-          <Link to='/'><img src={Logo} /></Link>
+          <Link to='/'><img src={Logo}  aria-label='logo' /></Link>
 
           {/* DESKTOP MENU */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:'end' }}>
@@ -39,6 +39,7 @@ function ResponsiveAppBar() {
                 key={page.id}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: theme.palette.primary.main, display: 'block' }}
+                aria-label='menu-item'
               >
                 {page.title}
               </Button>
@@ -77,7 +78,7 @@ function ResponsiveAppBar() {
             >
               {MainMenuData.map((page) => (
                 <Link style={theme.links} to={page.link}  key={page.id}> 
-                  <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                  <MenuItem key={page.id} onClick={handleCloseNavMenu} aria-label='menu-item'>
                     {page.title}
                   </MenuItem>
                 </Link>
