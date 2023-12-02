@@ -1,0 +1,115 @@
+import React from 'react'
+
+const Tables = [
+  {
+    id: 10,
+    colStart: 1,
+    colSpan: 3,
+    rowStart: 2,
+    rowSpan: 1,
+  },
+  {
+    id: 11,
+    colStart: 5,
+    colSpan: 3,
+    rowStart: 2,
+    rowSpan: 1,
+  },
+  {
+    id: 9,
+    colStart: 1,
+    colSpan: 2,
+    rowStart: 5,
+    rowSpan: 1,
+  },
+  {
+    id: 8,
+    colStart: 1,
+    colSpan: 2,
+    rowStart: 8,
+    rowSpan: 1,
+  },
+  {
+    id: 7,
+    colStart: 2,
+    colSpan: 1,
+    rowStart: 11,
+    rowSpan: 2,
+  },
+  {
+    id: 6,
+    colStart: 5,
+    colSpan: 1,
+    rowStart: 11,
+    rowSpan: 2,
+  },
+  {
+    id: 14,
+    colStart: 7,
+    colSpan: 2,
+    rowStart: 11,
+    rowSpan: 2,
+    caption: "hall",
+  },
+  {
+    id: 5,
+    colStart: 10,
+    colSpan: 1,
+    rowStart: 11,
+    rowSpan: 1,
+  },
+  {
+    id: 4,
+    colStart: 13,
+    colSpan: 1,
+    rowStart: 11,
+    rowSpan: 2,
+  },
+  {
+    id: 3,
+    colStart: 16,
+    colSpan: 1,
+    rowStart: 11,
+    rowSpan: 2,
+  },
+  {
+    id: 2,
+    colStart: 19,
+    colSpan: 1,
+    rowStart: 11,
+    rowSpan: 2,
+  },
+  {
+    id: 1,
+    colStart: 22,
+    colSpan: 1,
+    rowStart: 11,
+    rowSpan: 2,
+  },
+  {
+    id: 15,
+    colStart: 13,
+    colSpan: 7,
+    rowStart: 7,
+    rowSpan: 1,
+    caption: "Bar",
+  },
+  {
+    id: 16,
+    colStart: 8,
+    colSpan: 16,
+    rowStart: 1,
+    rowSpan: 5,
+    caption: "Kitchen",
+  },
+  {
+    id: 12,
+    colStart: 5,
+    colSpan: 2,
+    rowStart: 4,
+    rowSpan: 2,
+    borderRadius:'30px'
+  },
+];
+
+export default Tables
