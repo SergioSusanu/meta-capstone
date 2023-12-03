@@ -4,6 +4,7 @@ import Row from '../common/Row'
 import Tables from './TableData'
 import Seats from './SeatsData'
 import CircleIcon from '@mui/icons-material/Circle';
+import Table from './Table'
 
 const TablesMap = () => {
    const tableMapStyles={
@@ -17,28 +18,11 @@ const TablesMap = () => {
     marginRight:'auto',
   }
 
-  const tableStyle = {
-    backgroundColor: 'darkgray',
-    gridColumn: '1 / span 3',
-    gridRow:'2 / span 1'
-  }
-
   return (
     <Row>
       <Box sx={tableMapStyles}>
         {Tables.map((table)=>{
-          return <Box sx={{
-            backgroundColor:'darkgray',
-            gridColumn: `${table.colStart} / span ${table.colSpan}`,
-            gridRow:`${table.rowStart} / span ${table.rowSpan}`,
-            display:'flex',
-            alignItems:'center',
-            justifyContent:'center',
-            borderRadius: table.borderRadius || '0px'
-          }}
-             key={table.id}>
-              {table.caption || table.id}
-             </Box>
+          return <Table key={table.id} table={table}></Table>
         })}
         {Seats.map((seat)=>{
           return <Box key={seat.id} sx={{
