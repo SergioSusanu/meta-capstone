@@ -49,13 +49,13 @@ const Tables = [
     colSpan: 2,
     rowStart: 11,
     rowSpan: 2,
-    caption: "hall",
+    caption: "entry",
   },
   {
     id: 5,
     colStart: 10,
     colSpan: 1,
-    rowStart: 11,
+    rowStart: 12,
     rowSpan: 1,
   },
   {
@@ -105,10 +105,9 @@ const Tables = [
   {
     id: 12,
     colStart: 5,
-    colSpan: 2,
-    rowStart: 4,
-    rowSpan: 2,
-    borderRadius:'30px'
+    colSpan: 3,
+    rowStart: 5,
+    rowSpan: 1,
   },
 ];
 

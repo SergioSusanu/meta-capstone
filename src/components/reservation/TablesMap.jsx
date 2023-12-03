@@ -2,7 +2,8 @@ import { Box } from '@mui/material'
 import React from 'react'
 import Row from '../common/Row'
 import Tables from './TableData'
-
+import Seats from './SeatsData'
+import CircleIcon from '@mui/icons-material/Circle';
 
 const TablesMap = () => {
    const tableMapStyles={
@@ -38,6 +39,18 @@ const TablesMap = () => {
              key={table.id}>
               {table.caption || table.id}
              </Box>
+        })}
+        {Seats.map((seat)=>{
+          return <Box key={seat.id} sx={{
+            gridColumn: `${seat.y} / span 1`,
+            gridRow:`${seat.x} / span 1`,
+            display:'flex',
+            justifyContent:'center',
+            alignItems:'center'
+          }}
+          >
+            <CircleIcon sx={{color:'darkgray', fontSize:'16px'}} />
+          </Box>
         })}
       </Box>
     </Row>
