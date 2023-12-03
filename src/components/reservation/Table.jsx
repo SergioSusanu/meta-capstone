@@ -1,14 +1,23 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Box } from '@mui/material'
+import { useSelector, useDispatch } from 'react-redux'
+import {select, unSelect} from '../../features/tablesSlice'
 
 const Table = ({table}) => {
+  const selectedTable = useSelector((state)=>state.tables.selected)
+  const [selected, setSelected] = useState(false)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+      setSelected(selectedTable === table.id)
+  }, [selectedTable])
 
   const handleClick = () => {
-    console.log(table.id);
+    selected ? dispatch(unSelect()) : dispatch(select(table.id))
   }
   return (
     <Box onClick={handleClick} sx={{
-            backgroundColor:'darkgray',
+            backgroundColor: selected ? 'green' : 'darkgray',
             gridColumn: `${table.colStart} / span ${table.colSpan}`,
             gridRow:`${table.rowStart} / span ${table.rowSpan}`,
             display:'flex',
