@@ -19,10 +19,14 @@ export const tablesSlice = createSlice({
       state.TablesStatuses[action.payload] = 1; //update new table to unselected
       state.selected = 0; //update the pointer
     },
+    updateTablesStatutes: (state, action) => {
+      state.selected = 0;
+      state.TablesStatuses = action.payload
+    }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { select, unSelect } = tablesSlice.actions;
+export const { select, unSelect, updateTablesStatutes   } = tablesSlice.actions;
 
 export default tablesSlice.reducer;

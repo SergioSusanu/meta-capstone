@@ -1,10 +1,12 @@
 import React from "react";
 import BookingForm from "./ReservationForm";
 import { useReducer } from "react";
-import { fetchAPI, submitAPI } from "./../../utils/fakeAPI";
+import { fetchAPI, submitAPI, fetchTables } from "./../../utils/fakeAPI";
 import { useNavigate } from "react-router-dom";
 import TablesMap from "./TablesMap";
 import { Box } from "@mui/material";
+import { useSelector, useDispatch } from "react-redux";
+import { updateTablesStatutes } from "../../features/tablesSlice";
 
 
 export const init = () => {
@@ -26,9 +28,11 @@ const Bookings = () => {
     init
   );
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const submitForm = (reservationData) => {
     if (submitAPI(reservationData)) {
+      dispatch(updateTablesStatutes(fetchTables(new Date())))
       navigate("/tables");
     }
   };
