@@ -1,3 +1,5 @@
+
+
 const seededRandom = (seed) => {
   const m = 2 ** 35 - 31;
   const a = 185852;
@@ -19,5 +21,18 @@ const fetchAPI = (date) => {
 };
 
 const submitAPI = (formData) => true;
+
+export const fetchTables = (date) => {
+
+  let random = seededRandom(date.getDate());
+
+  let TableStatus = []
+  for (let i = 0; i < 13; i++) {
+    if (random() <= 0.5) {TableStatus[i] = 1}
+    else {TableStatus[i] = 0}
+  }
+
+  return TableStatus;
+}
 
 export { fetchAPI, submitAPI };

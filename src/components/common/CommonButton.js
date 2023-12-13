@@ -19,11 +19,6 @@ const CommonButton = ({children}) => {
       px: theme.spacing(2),
     };
 
-    useEffect(() => {
-      console.log(theme);
-      console.log(theme.palette.primary.main);
-    }, [])
-
   return <Button sx={ButtonStyles}>{children}</Button>;
 }
 

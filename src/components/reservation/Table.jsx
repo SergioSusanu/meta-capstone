@@ -5,19 +5,46 @@ import {select, unSelect} from '../../features/tablesSlice'
 
 const Table = ({table}) => {
   const selectedTable = useSelector((state)=>state.tables.selected)
+  const TablesStatuses = useSelector((state)=>state.tables.TablesStatuses)
   const [selected, setSelected] = useState(false)
   const dispatch = useDispatch()
 
-  useEffect(() => {
-      setSelected(selectedTable === table.id)
-  }, [selectedTable])
+  // useEffect(() => {
+  //   // console.log("selected ",TablesStatuses);
+  //     // setSelected(selectedTable === table.id)
+  // }, [selectedTable])
 
   const handleClick = () => {
-    selected ? dispatch(unSelect()) : dispatch(select(table.id))
+    if (TablesStatuses[table.id] === 1) {
+
+      // table is available -> selected
+      dispatch(select(table.id))
+    }
+   else if (TablesStatuses[table.id] === 2) {
+      // table is selected -> available
+      dispatch(unSelect(table.id))
+   }
+  }
+
+  const backColor = () => {
+    switch(TablesStatuses[table.id]) {
+  case 1:
+    // code block
+    return 'yellow'
+  case 0:
+    // code block
+    return 'darkgray'
+  case 2:
+    // code block
+    return 'green'
+  default:
+    // code block
+     return 'lightgray'
+}
   }
   return (
     <Box onClick={handleClick} sx={{
-            backgroundColor: selected ? 'green' : 'darkgray',
+            backgroundColor: backColor,
             gridColumn: `${table.colStart} / span ${table.colSpan}`,
             gridRow:`${table.rowStart} / span ${table.rowSpan}`,
             display:'flex',

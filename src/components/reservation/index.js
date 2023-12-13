@@ -29,7 +29,7 @@ const Bookings = () => {
 
   const submitForm = (reservationData) => {
     if (submitAPI(reservationData)) {
-      navigate("/reservation-success");
+      navigate("/tables");
     }
   };
   return (
@@ -39,7 +39,6 @@ const Bookings = () => {
         submitForm={submitForm}
         dispatchDateChange={dispatchDateChange}
       ></BookingForm>
-     <TablesMap />
     </Box>
   );
 };

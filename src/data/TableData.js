@@ -43,14 +43,7 @@ const Tables = [
     rowStart: 11,
     rowSpan: 2,
   },
-  {
-    id: 14,
-    colStart: 7,
-    colSpan: 2,
-    rowStart: 11,
-    rowSpan: 2,
-    caption: "entry",
-  },
+
   {
     id: 5,
     colStart: 10,
@@ -87,7 +80,7 @@ const Tables = [
     rowSpan: 2,
   },
   {
-    id: 15,
+    id: 13,
     colStart: 13,
     colSpan: 7,
     rowStart: 7,
@@ -108,6 +101,14 @@ const Tables = [
     colSpan: 3,
     rowStart: 5,
     rowSpan: 1,
+  },
+  {
+    id: 14,
+    colStart: 7,
+    colSpan: 2,
+    rowStart: 11,
+    rowSpan: 2,
+    caption: "entry",
   },
 ];
 

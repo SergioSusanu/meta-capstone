@@ -15,6 +15,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import ReservationSuccess from "./components/reservation/ReservationSuccess";
 import { store } from "./app/store"
 import { Provider } from "react-redux";
+import Tables from "./pages/Tables";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                 <Route path="/" element={<SharedLayout />}>
                   <Route index element={<HomePage />}></Route>
                   <Route path="reservations" element={<Reservations />}></Route>
+                  <Route path="tables" element={<Tables />}></Route>
                   <Route
                     path="reservation-success"
                     element={<ReservationSuccess />}
