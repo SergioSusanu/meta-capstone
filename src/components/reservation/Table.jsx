@@ -2,17 +2,14 @@ import React, {useState, useEffect} from 'react'
 import { Box } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
 import {select, unSelect} from '../../features/tablesSlice'
+import { useTheme } from "@mui/material/styles";
 
 const Table = ({table}) => {
   const selectedTable = useSelector((state)=>state.tables.selected)
   const TablesStatuses = useSelector((state)=>state.tables.TablesStatuses)
   const [selected, setSelected] = useState(false)
   const dispatch = useDispatch()
-
-  // useEffect(() => {
-  //   // console.log("selected ",TablesStatuses);
-  //     // setSelected(selectedTable === table.id)
-  // }, [selectedTable])
+  const theme = useTheme()
 
   const handleClick = () => {
     if (TablesStatuses[table.id] === 1) {
@@ -30,13 +27,13 @@ const Table = ({table}) => {
     switch(TablesStatuses[table.id]) {
   case 1:
     // code block
-    return 'yellow'
+    return theme.palette.secondary.main
   case 0:
     // code block
     return 'darkgray'
   case 2:
     // code block
-    return 'green'
+    return theme.palette.primary.main
   default:
     // code block
      return 'lightgray'
