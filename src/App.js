@@ -26,7 +26,7 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline enableColorScheme />
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
               <Routes>
                 <Route path="/" element={<SharedLayout />}>
                   <Route index element={<HomePage />}></Route>
