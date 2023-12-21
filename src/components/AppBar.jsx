@@ -35,7 +35,7 @@ function ResponsiveAppBar() {
           {/* DESKTOP MENU */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:'end' }}>
             {MainMenuData.map((page) => (
-               <Link to={page.link}><Button
+               <Link to={page.link} style={{textDecoration:'none'}} ><Button
                 key={page.id}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: theme.palette.primary.main, display: 'block' }}
